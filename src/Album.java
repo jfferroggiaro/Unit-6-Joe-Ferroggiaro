@@ -11,10 +11,19 @@ public class Album {
         this.playTime = playTime;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
     @Override
     public String toString() {
         String albumPrint = "";
         albumPrint += title + " by " + artist + "\n";
         albumPrint += numTracks + " tracks - " + playTime + " minutes";
+        return albumPrint;
     }
 }

@@ -6,6 +6,8 @@ public class MusicLibraryClient {
         Album a2 = new Album("This Music", "Some Band", 9, 36);
         Album a3 = new Album("Play", "People", 12, 39.1);
 
+        System.out.println(a2);
+
         System.out.println(myLibrary.add(a1));
         System.out.println(myLibrary.add(a2));
 
@@ -19,12 +21,17 @@ public class MusicLibraryClient {
         System.out.println(myLibrary);
 
         System.out.println("+++++++++++++++++++++++++++++++++++++++");
+           */
 
         myLibrary.remove(1);
         myLibrary.add(a3);
         System.out.println(myLibrary);
 
         System.out.println("+++++++++++++++++++++++++++++++++++++++");
-        */
+
+        int loc = myLibrary.searchTitle("First");
+
+        System.out.println(myLibrary.getAlbum(loc));
+
     }
 }
