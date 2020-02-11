@@ -57,4 +57,36 @@ public class MusicLibrary {
             return null;
         }
     }
+
+    public void sortByTitle(){
+        Album temp;
+        int min;
+        for (int i = 0; i < library.length - 1; i++) {
+            min = i;
+            for(int scan = i + 1; scan < library.length; scan++) {
+                if (library[scan] != null && library[i] != null) {
+                    if (library[scan].getTitle().compareTo(library[i].getTitle()) < 0) {
+                        min = scan;
+                    }
+                }
+            }
+
+            temp = library[min];
+            library[min] = library[i];
+            library[i] = temp;
+        }
+    }
+
+    public void sortByArtist(){
+        for (int i = 0; i < library.length; i++){
+            Album key = library[i];
+            int pos = i;
+
+            while(pos > 0 && library[pos-1].getArtist().compareTo(key.getArtist()) > 0){
+                library[pos] = library[pos-1];
+                pos--;
+            }
+            library[pos] = key;
+        }
+    }
 }
