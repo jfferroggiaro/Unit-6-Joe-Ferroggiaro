@@ -29,22 +29,36 @@ public class MyArray2DExplorer {
     //WRITE YOUR METHODS BELOW
 
     public boolean evenRow(int [][] mat, int row){
-        for(int[] i : mat) {
-            for (int k : i) {
+            for (int k : mat[row]) {
                 if(k%2 != 0)
                     return false;
             }
-        }
         return true;
     }
 
     //returns true if the sum of the numbers the given col is odd.
+    public boolean oddColSum(int[][] nums, int col){
+        int colSum = 0;
+        for(int i = 0; i < nums.length; i++){
+            colSum += nums[i][col];
+        }
+        return(colSum%2 != 0);
+    }
 
-}
-
-
-    public int[] minRow(int [][] mat){
-
+    public int[] minRow(int[][] nums){
+        int min = 0;
+        int[] minPos = null;
+        for(int i = 0; i < nums.length; i++){
+            System.out.println("I" + i + " " + nums[i]);
+            for(int k = 0; k < nums[i].length; k++){
+                System.out.println("K" + k + " " + nums[i][k]);
+                System.out.println("Min" + min);
+                if(nums[i][k] < min)
+                    min = nums[i][k];
+                    minPos = nums[i];
+            }
+        }
+        return minPos;
     }
 
 
