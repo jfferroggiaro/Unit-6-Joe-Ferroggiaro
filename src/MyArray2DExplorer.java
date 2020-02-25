@@ -69,7 +69,75 @@ public class MyArray2DExplorer {
     }
 
     public int[] colMaxs(int[][] matrix){
-        int maxArr []
+        int max = 0;
+        int[] maxArr = new int[matrix.length];
+        for(int i = 0; i < matrix.length; i++){
+            max = matrix[i][0];
+            for(int k = 0; k < matrix[i].length; k++){
+                if(matrix[i][k] > max)
+                    max = matrix[i][k];
+                maxArr[i] = max;
+            }
+        }
+        return maxArr;
+    }
+
+    public int[] allRowSums(int[][] data){
+        int rowSum = 0;
+        int[] rowSumArr = new int[data.length];
+        for(int i = 0; i < data.length; i++){
+            rowSum = 0;
+            for(int k = 0; k < data[i].length; k++){
+                rowSum += data[i][k];
+            }
+            rowSumArr[i] = rowSum;
+        }
+        return rowSumArr;
+    }
+
+    public double[] averageCol(int[][] nums){
+        int colSum = 0;
+        double colAvg = 0;
+        double[] colAvgArr = new double[nums[0].length];
+        for(int i = 0; i < nums[0].length; i++){
+            colSum = 0;
+            colAvg = 0;
+            for(int k = 0; k < nums.length; k++){
+                colSum += nums[k][i];
+                colAvg = (double) colSum/nums.length;
+            }
+            colAvgArr[i] = colAvg;
+        }
+        return colAvgArr;
+    }
+
+    public int smallEven(int[][] matrix){
+        int result = Integer.MAX_VALUE;
+        for(int[] i : matrix){
+            for(int k : i){
+                if(k < result && k%2 == 0){
+                    result = k;
+                }
+            }
+        }
+        return result;
+    }
+
+    public static int biggestRow(int[][] nums){
+        int bigRowIndex = 0;
+        int rowSum = 0;
+        int rowMax = 0;
+        for (int i = 0; i < nums.length; i++) {
+            rowSum = 0;
+            for (int j = 0; j < nums[i].length ; j++) {
+                rowSum += nums[i][j];
+            }
+            if(rowSum > rowMax){
+                rowMax = rowSum;
+                bigRowIndex = i;
+            }
+        }
+        return bigRowIndex;
     }
 
 
