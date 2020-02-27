@@ -1,4 +1,32 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class ArrayListTester {
+
+    public static void removeZeros(ArrayList<Integer> list){
+        for(int i = 0; i < list.size(); i++){
+            if(list.get(i) == 0) {
+                list.remove(i);
+                i--;
+            }
+        }
+    }
+
+    public static int countLetters(ArrayList<String> list){
+        int letterCount = 0;
+        for (int i = 0; i < list.size(); i++){
+            letterCount += list.get(i).length();
+        }
+        return letterCount;
+    }
+
+    public static int findPosition(int target, ArrayList<Integer> list){
+        
+    }
+
+
+
+
     public static void main(String[] args) {
         System.out.println("Test Remove Zeros");
         ArrayList<Integer> nums = new ArrayList<>(Arrays.asList(3,4,0,0,1,4,0,6,0));
@@ -18,7 +46,7 @@ public class ArrayListTester {
         System.out.println("Test keyPosition: find a 1");
         System.out.println(nums);
         System.out.println("Expected: 2 \n Actual: " + findPosition(1, nums));
-
+/*
         System.out.println();
 
         System.out.println("Test parse into array");
@@ -45,6 +73,7 @@ public class ArrayListTester {
         System.out.println("# of Quarters = " + myPurse.count(new Coin(.25, "quarter")));
         System.out.println("Smallest Coin = " + myPurse.findSmallest());
         System.out.println("Total of Purse = $" + myPurse.getTotal());
+        */
 
     }
 }
