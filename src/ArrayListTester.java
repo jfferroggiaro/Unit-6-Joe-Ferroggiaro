@@ -21,8 +21,37 @@ public class ArrayListTester {
     }
 
     public static int findPosition(int target, ArrayList<Integer> list){
-        
+        for (int i = 0; i < list.size(); i++) {
+            if(list.get(i) == target){
+                return i;
+            }
+        }
+        return -1;
     }
+
+    public static ArrayList parseIntoArrayList(String text){
+        ArrayList<String> parseResult = new ArrayList<String>();
+        for (int i = 0; i < text.length(); i++) {
+            parseResult.add(text.substring(i, i+1));
+        }
+        return parseResult;
+    }
+
+    public static String findMin(ArrayList<Person> people){
+        int minPos = 0;
+        int minAge = Integer.MAX_VALUE;
+        for(int i = 0; i < people.size(); i++){
+            if(people.get(i).getAge() < minAge){
+                minAge = people.get(i).getAge();
+                minPos = i;
+            }
+        }
+        return people.get(minPos).getName();
+    }
+
+
+
+
 
 
 
@@ -46,7 +75,7 @@ public class ArrayListTester {
         System.out.println("Test keyPosition: find a 1");
         System.out.println(nums);
         System.out.println("Expected: 2 \n Actual: " + findPosition(1, nums));
-/*
+
         System.out.println();
 
         System.out.println("Test parse into array");
@@ -73,7 +102,7 @@ public class ArrayListTester {
         System.out.println("# of Quarters = " + myPurse.count(new Coin(.25, "quarter")));
         System.out.println("Smallest Coin = " + myPurse.findSmallest());
         System.out.println("Total of Purse = $" + myPurse.getTotal());
-        */
+
 
     }
 }
